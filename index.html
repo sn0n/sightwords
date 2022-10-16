@@ -1,59 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1'/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
     <title>sight words for kids</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/pico.min.css">
   <style>
-    .theWord {
-      left: 50%;
-      padding-top: 25%;
-      margin: auto;
-      text-align: center;
-      justify-content: center;
-    }
-
-    .highlight {
-      font-size: xxx-large;
-      font-weight: bolder;
-    }
-
-    .refresh {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-    }
-
-    .button {
-      background-color: #04AA6D;
-      border: none;
-      color: white;
-      padding: 0px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: xxx-large;
-      margin: auto;
-      border-radius: 50%;
-      height: 2em;
-      width: 2em;
-    }
-  </style>
+  .refresh {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+  }
+  </style> 
 </head>
 
 <body>
-  <button onClick='nextWord()' class='refresh button'>&gt;</button>
-  <audio id="myAudio">
+
+
+
+
+
+
+<main class="container" style="max-width: 70%;">
+  <article>
+    <h1 id="theWord"></h1>
+    <div style="width: 90%; text-align: right;">
+      <a href="#" role="button" class="outline" onclick="playAudio()"><img src = "./images/play.svg" alt="play"/></a>
+    <audio id="myAudio"></div>
   </audio>
-
-  <div class="theWord">
-    <span id="theWord" class="highlight"></span>
-    <button onclick="playAudio()" class="button">&#9654;</button>
-  </div>
+    
+</article>
+</main>
 
 
+  <span class="refresh">
+  <a href="#" role="button" class="outline" onClick='nextWord()'><img src = "./images/skip-forward.svg" alt="next"/></a>
+  </span>
 
   <script>
     let sightList = [

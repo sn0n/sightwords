@@ -11,6 +11,21 @@
     bottom: 25px;
     right: 25px;
   }
+
+  .glow {
+  color: #fff;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
   </style> 
 </head>
 
@@ -22,6 +37,16 @@
 
 
 <main class="container" style="max-width: 70%;">
+  <nav>
+    <ul>
+      <li><strong>Learn with me!</strong></li>
+    </ul>
+    <ul>
+      <!-- <li><a href="#">Aa Bb Cc</a></li>
+      <li><a href="#">1 2 3</a></li> -->
+      <li><a href="#" role="button">Sight Words</a></li>
+    </ul>
+  </nav>
   <article>
     <h1 id="theWord"></h1>
     <div style="width: 90%; text-align: right;">
@@ -118,6 +143,7 @@
     document.getElementById("myAudio").innerHTML = '<source src="./audio/'+theNewWord+'.mp3" type="audio/mpeg">';
 
     function nextWord() {
+      document.getElementById("theWord").className = "none"
       if (i + 1 >= sightList.length) {
         i = 0;
         console.log("reset");
@@ -137,12 +163,13 @@
 
 
     function playAudio() {
+      document.getElementById("theWord").className = 'glow'
       x.load();
       x.play();
     }
 
     function pauseAudio() {
-      x.pause();
+        x.pause();
     } 
   </script>
 
